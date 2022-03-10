@@ -8,7 +8,7 @@ const ComponentsScreen = (props) => {
   }, []);
 
   const greeting = <Text>Hello!</Text>;
-  const name = 'tr10nn';
+  const name = 'Terayama';
 
   const onSetValue = () => {
     setValue(value + 1);
@@ -16,10 +16,8 @@ const ComponentsScreen = (props) => {
 
   return (
     <View>
-      <Text style={styles.MainText}>Getting started with ReactN ative</Text>
-      <Text style={styles.subText}>My name is {name}.</Text>
-      <Button onPress={onSetValue} title='press me' />
-      {greeting}
+      <Text style={styles.MainText}>Getting started with React Native!</Text>
+      <Text styles={styles.subText}>My name is {name}</Text>
     </View>
   );
 };
