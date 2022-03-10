@@ -16,12 +16,13 @@ const ListScreen = () => {
     <View>
       <Text style={styles.text}>Friends</Text>
       <FlatList
-        // horizontal
-        showsHorizontalScrollIndicator={false}
-        data={friends}
+        // horizontal // 水平
+        // showsHorizontalScrollIndicator={false} // 水平スクロールバーの表示
         style={styles.list}
-        keyExtractor={(friends) => friends.name}
+        data={friends} // 必須
+        keyExtractor={(friends) => friends.name} // 必須
         renderItem={({ item }) => {
+          // 必須
           return (
             <Text style={styles.item}>
               {item.name} - Age {item.age}
