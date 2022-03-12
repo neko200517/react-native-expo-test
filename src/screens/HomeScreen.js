@@ -26,18 +26,28 @@ const HomeScreen = ({ navigation }) => {
   const onGotoListDemo = () => {
     navigation.navigate('List');
   };
+  const onGotoImageScreen = () => {
+    navigation.navigate('Image');
+  };
 
   return (
     <View style={styles.container}>
       <View styles={styles.buttonWrapper}>
         <Text style={styles.title}>HELLO!</Text>
         <Button title='Go to Component Demo' onPress={onGotoComponentDemo} />
+
         <TouchableOpacity style={styles.button} onPress={onGotoListDemo}>
           <Text style={styles.buttonText}>Go to List Demo</Text>
         </TouchableOpacity>
-        <Pressable style={styles.button} onPress={onAddTag}>
-          <Text style={styles.buttonText}>ADD TAG</Text>
+
+        <TouchableOpacity style={styles.button} onPress={onGotoImageScreen}>
+          <Text style={styles.buttonText}>Go to Image Demo</Text>
+        </TouchableOpacity>
+
+        <Pressable style={styles.borderButton} onPress={onAddTag}>
+          <Text style={styles.borderButtonText}>ADD TAG</Text>
         </Pressable>
+
         <Pressable style={styles.borderButton} onPress={onResetTag}>
           <Text style={styles.borderButtonText}>RESET TAG</Text>
         </Pressable>
@@ -65,26 +75,13 @@ const styles = StyleSheet.create({
   },
   buttonWrapper: {},
   button: {
-    marginVertical: 16,
+    marginVertical: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-
-    /* preview */
     width: 150,
-    height: 60,
-    borderRadius: 30,
+    height: 30,
+    borderRadius: 10,
     backgroundColor: '#2C8CE3',
-
-    /* shadow */
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 2,
     elevation: 3,
   },
   buttonText: {
