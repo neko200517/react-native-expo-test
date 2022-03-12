@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import ColorCounter from './Components/ColorCounter';
 
-const SquareScreen = () => {
-  const [red, setRedColor] = useState(125);
-  const [green, setGreenColor] = useState(125);
-  const [blue, setBlueColor] = useState(125);
+const COLOR_INCREMENT = 25;
+const MAX_VALUE = 255;
 
-  const COLOR_INCREMENT = 25;
-  const MAX_VALUE = 255;
+const SquareScreen = () => {
+  const [color, setColorObject] = useState({
+    red: 125,
+    green: 125,
+    blue: 125,
+  });
+  const { red, green, blue } = color;
 
   const getColor = () => {
     return `rgb(${red}, ${green}, ${blue})`;
@@ -24,16 +27,20 @@ const SquareScreen = () => {
     return v;
   };
 
-  const setColor = (color, change) => {
-    switch (color) {
+  const setColor = (type, change) => {
+    let v = 0;
+    switch (type) {
       case 'red':
-        setRedColor(addValue(red, change));
+        v = addValue(red, change);
+        setColorObject({ ...color, red: v });
         break;
       case 'green':
-        setGreenColor(addValue(green, change));
+        v = addValue(green, change);
+        setColorObject({ ...color, green: v });
         break;
       default:
-        setBlueColor(addValue(blue, change));
+        v = addValue(blue, change);
+        setColorObject({ ...color, blue: v });
     }
   };
 
