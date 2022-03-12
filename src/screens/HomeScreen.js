@@ -29,6 +29,15 @@ const HomeScreen = ({ navigation }) => {
   const onGotoImageScreen = () => {
     navigation.navigate('Image');
   };
+  const onGotoCounterScreen = () => {
+    navigation.navigate('Counter');
+  };
+  const onGotoColorScreen = () => {
+    navigation.navigate('Color');
+  };
+  const onGotoSquareScreen = () => {
+    navigation.navigate('Square');
+  };
 
   return (
     <View style={styles.container}>
@@ -42,6 +51,18 @@ const HomeScreen = ({ navigation }) => {
 
         <TouchableOpacity style={styles.button} onPress={onGotoImageScreen}>
           <Text style={styles.buttonText}>Go to Image Demo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={onGotoCounterScreen}>
+          <Text style={styles.buttonText}>Go to Count Demo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={onGotoColorScreen}>
+          <Text style={styles.buttonText}>Go to Color Demo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={onGotoSquareScreen}>
+          <Text style={styles.buttonText}>Go to Square Demo</Text>
         </TouchableOpacity>
 
         <Pressable style={styles.borderButton} onPress={onAddTag}>
