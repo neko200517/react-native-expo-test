@@ -38,10 +38,9 @@ const ColorScreen = () => {
       <Button title='Reset Color' onPress={onResetColor}></Button>
       <FlatList
         data={colors}
-        keyExtractor={(color) => {
-          color.key;
-        }}
+        keyExtractor={(color) => color.key}
         contentContainerStyle={styles.colorList}
+        numColumns={5}
         renderItem={({ item }) => {
           return (
             <View>
@@ -52,7 +51,6 @@ const ColorScreen = () => {
                   backgroundColor: `${item.value}`,
                 }}
               ></View>
-              {/* <Text>{item.value}</Text> */}
             </View>
           );
         }}
@@ -63,8 +61,8 @@ const ColorScreen = () => {
 
 const styles = StyleSheet.create({
   colorList: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    // flexDirection: 'column',
+    // flexWrap: 'wrap',
   },
 });
 

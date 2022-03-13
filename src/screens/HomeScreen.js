@@ -78,6 +78,7 @@ const HomeScreen = ({ navigation }) => {
         contentContainerStyle={styles.itemWrapper}
         data={text}
         keyExtractor={(item) => item.key}
+        numColumns={6}
         renderItem={({ item }) => {
           return (
             <View>
@@ -127,8 +128,6 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   itemWrapper: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
     marginTop: 16,
   },
   item: {

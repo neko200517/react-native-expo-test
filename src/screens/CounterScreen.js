@@ -1,13 +1,32 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
+const TYPE_INCREMENT = 'increment';
+const TYPE_DECREMENT = 'decrement';
+const COUNT_INCREMENT = 10;
+
+const reducer = (state, action) => {
+  const { count } = state;
+  const { type, payload } = action;
+  switch (type) {
+    case TYPE_INCREMENT:
+      return { ...state, count: count + payload };
+    case TYPE_DECREMENT:
+      return { ...state, count: count - payload };
+    default:
+      return state;
+  }
+};
+
 const CounterScreen = () => {
-  const [count, setCount] = useState(0);
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  const { count } = state;
+
   const onIncrease = () => {
-    setCount(count + 1);
+    dispatch({ type: TYPE_INCREMENT, payload: COUNT_INCREMENT });
   };
   const onDecrease = () => {
-    setCount(count - 1);
+    dispatch({ type: TYPE_DECREMENT, payload: COUNT_INCREMENT });
   };
   return (
     <View>
