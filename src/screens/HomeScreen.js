@@ -41,6 +41,9 @@ const HomeScreen = ({ navigation }) => {
   const onGotoTextScreen = () => {
     navigation.navigate('Text');
   };
+  const onGotoBoxScreen = () => {
+    navigation.navigate('Box');
+  };
 
   return (
     <View style={styles.container}>
@@ -70,6 +73,10 @@ const HomeScreen = ({ navigation }) => {
 
         <TouchableOpacity style={styles.button} onPress={onGotoTextScreen}>
           <Text style={styles.buttonText}>Go to Input Demo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={onGotoBoxScreen}>
+          <Text style={styles.buttonText}>Go to Box Demo</Text>
         </TouchableOpacity>
 
         <Pressable style={styles.borderButton} onPress={onAddTag}>
