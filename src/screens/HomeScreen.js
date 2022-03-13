@@ -38,6 +38,9 @@ const HomeScreen = ({ navigation }) => {
   const onGotoSquareScreen = () => {
     navigation.navigate('Square');
   };
+  const onGotoTextScreen = () => {
+    navigation.navigate('Text');
+  };
 
   return (
     <View style={styles.container}>
@@ -63,6 +66,10 @@ const HomeScreen = ({ navigation }) => {
 
         <TouchableOpacity style={styles.button} onPress={onGotoSquareScreen}>
           <Text style={styles.buttonText}>Go to Square Demo</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={onGotoTextScreen}>
+          <Text style={styles.buttonText}>Go to Input Demo</Text>
         </TouchableOpacity>
 
         <Pressable style={styles.borderButton} onPress={onAddTag}>
