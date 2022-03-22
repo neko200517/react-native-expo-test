@@ -10,7 +10,7 @@ React と Tailwind の組み合わせテスト
 npm install -g expo-cli
 ```
 
-1. スマホに expo アプリをインストール
+2. スマホに expo アプリをインストール
 
 # 始め方
 
